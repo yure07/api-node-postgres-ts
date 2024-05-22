@@ -1,6 +1,5 @@
 import fastify from "fastify";
 import { FastifyInstance, FastifyRequest } from 'fastify';
-//import DataBaseMomory from "./database-memory";
 import DataBaseNeon from "./database-neondb";
 
 interface CarObj{
@@ -15,7 +14,8 @@ interface ParamsType{
 }
 
 const server = fastify()
-//const data = new DataBaseMomory()
+const host = '0.0.0.0'
+const port = Number(process.env.PORT) ?? 3333
 const data = new DataBaseNeon()
 
 server.get('/cars', async (request: FastifyRequest<{ Querystring: ParamsType }>, reply) => {
@@ -57,6 +57,12 @@ server.delete('/cars/:id', (request: FastifyRequest<{ Params: ParamsType }>, rep
   return reply.status(200).send()
 })
 
-server.listen({ port: 3333 }, () => {
-  console.log('servidor na porta 3333!')
-})
+async function startServer() {
+  try {
+    await server.listen({ port, host })
+  } catch (err) {
+    server.log.error(err)
+    process.exit(1)
+  }
+}
+startServer()
