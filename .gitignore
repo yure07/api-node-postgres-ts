@@ -5,7 +5,7 @@ node_modules
 .env
 
 # Arquivos de saída TypeScript
-*.js
+dist
 
 # Exceto o server.js
 !server.js

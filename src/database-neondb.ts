@@ -1,5 +1,5 @@
 import { randomUUID } from "crypto";
-import { sql } from "./sql";
+import { sql } from "../sql";
 
 interface CarObj{
   id?: string,

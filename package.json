@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
+  "engines": {
+    "node": "18"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc -p tsconfig.json",
-    "start": "node server.js",
-    "dev": "node --watch server.js"
+    "build": "tsup src",
+    "start": "node dist/server.js",
+    "dev": "node --watch dist/server.js"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +22,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.12.12",
+    "tsup": "^8.0.2",
     "typescript": "^5.4.5"
   }
 }
