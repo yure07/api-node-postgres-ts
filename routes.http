@@ -1,0 +1,26 @@
+GET http://localhost:3333/cars
+
+###
+
+POST http://localhost:3333/cars
+Content-Type: application/json
+
+{
+  "name": "Opala",
+  "year": 1993,
+  "price": 19300
+}
+
+###
+
+PUT http://localhost:3333/cars/fe34f2c7-315e-4052-a37a-084b7a71d33e
+Content-Type: application/json
+
+{
+  "name": "Golf",
+  "year": 2015,
+  "price": 95000
+}
+
+###
+DELETE http://localhost:3333/cars/fe34f2c7-315e-4052-a37a-084b7a71d33e

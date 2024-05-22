@@ -1,0 +1,8 @@
+# Node modules
+node_modules
+
+# Arquivo de ambiente
+.env
+
+# Arquivos de saída TypeScript
+*.js
