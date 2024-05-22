@@ -1,6 +1,6 @@
 import fastify from "fastify";
 import { FastifyInstance, FastifyRequest } from 'fastify';
-import DataBaseNeon from "../database-neondb";
+import DataBaseNeon from "./database-neondb";
 
 interface CarObj{
   name: string,
