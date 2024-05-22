@@ -6,3 +6,6 @@ node_modules
 
 # Arquivos de saída TypeScript
 *.js
+
+# Exceto o server.js
+!server.js
